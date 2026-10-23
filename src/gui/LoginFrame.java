@@ -1,17 +1,12 @@
 package gui;
-
 import model.User;
 import service.UserService;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-
 public class LoginFrame extends JFrame {
-
     private JTextField usernameField;
     private JPasswordField passwordField;
-
     private UserService userService;
 
     // =========================================================
@@ -20,16 +15,13 @@ public class LoginFrame extends JFrame {
 
     private final Color BACKGROUND = new Color(242, 246, 251);
     private final Color CARD = Color.WHITE;
-
     private final Color PRIMARY_BLUE = new Color(25, 118, 210);
     private final Color DARK_BLUE = new Color(13, 71, 161);
     private final Color LIGHT_BLUE = new Color(66, 165, 245);
     private final Color CYAN = new Color(79, 195, 247);
-
     private final Color TEXT = new Color(35, 45, 55);
     private final Color SECONDARY_TEXT = new Color(100, 110, 120);
     private final Color BORDER = new Color(215, 222, 230);
-
 
     // =========================================================
     // CONSTRUCTOR
@@ -38,19 +30,13 @@ public class LoginFrame extends JFrame {
     public LoginFrame() {
 
         userService = new UserService();
-
         setTitle("XYZ HOSPITAL - Login");
         setSize(520, 700);
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         setLocationRelativeTo(null);
-
         setResizable(false);
-
         createGUI();
     }
-
 
     // =========================================================
     // CREATE GUI
@@ -73,119 +59,84 @@ public class LoginFrame extends JFrame {
         // =====================================================
 
         JPanel headerPanel = new JPanel();
-
         headerPanel.setLayout(
                 new BoxLayout(headerPanel, BoxLayout.Y_AXIS)
         );
-
         headerPanel.setBackground(DARK_BLUE);
-
         headerPanel.setBorder(
                 new EmptyBorder(20, 15, 20, 15)
         );
-
-
         // Hospital icon
         JLabel hospitalIcon = new JLabel("✚");
-
         hospitalIcon.setFont(
                 new Font("Segoe UI", Font.BOLD, 36)
         );
-
         hospitalIcon.setForeground(Color.WHITE);
-
         hospitalIcon.setAlignmentX(
                 Component.CENTER_ALIGNMENT
         );
-
-
         // Hospital name
         JLabel hospitalName = new JLabel(
                 "XYZ HOSPITAL"
         );
-
         hospitalName.setFont(
                 new Font("Segoe UI", Font.BOLD, 27)
         );
-
         hospitalName.setForeground(Color.WHITE);
 
         hospitalName.setAlignmentX(
                 Component.CENTER_ALIGNMENT
         );
-
-
         // System name
         JLabel systemName = new JLabel(
                 "Smart Hospital Management System"
         );
-
         systemName.setFont(
                 new Font("Segoe UI", Font.PLAIN, 14)
         );
-
         systemName.setForeground(
                 new Color(210, 235, 255)
         );
-
         systemName.setAlignmentX(
                 Component.CENTER_ALIGNMENT
         );
-
-
         // Staff login
         JLabel loginTitle = new JLabel(
                 "STAFF LOGIN"
         );
-
         loginTitle.setFont(
                 new Font("Segoe UI", Font.BOLD, 13)
         );
-
         loginTitle.setForeground(CYAN);
-
         loginTitle.setAlignmentX(
                 Component.CENTER_ALIGNMENT
         );
-
-
         // Add header components
         headerPanel.add(hospitalIcon);
-
         headerPanel.add(
                 Box.createVerticalStrut(2)
         );
-
         headerPanel.add(hospitalName);
-
         headerPanel.add(
                 Box.createVerticalStrut(3)
         );
-
         headerPanel.add(systemName);
-
         headerPanel.add(
                 Box.createVerticalStrut(12)
         );
-
         headerPanel.add(loginTitle);
-
 
         // =====================================================
         // LOGIN CARD
         // =====================================================
 
         JPanel card = new JPanel();
-
         card.setLayout(
                 new BoxLayout(card, BoxLayout.Y_AXIS)
         );
-
         card.setBackground(CARD);
-
         card.setBorder(
                 BorderFactory.createCompoundBorder(
-
                         BorderFactory.createLineBorder(
                                 BORDER,
                                 1
@@ -200,7 +151,6 @@ public class LoginFrame extends JFrame {
                 )
         );
 
-
         // =====================================================
         // WELCOME TEXT
         // =====================================================
@@ -208,47 +158,33 @@ public class LoginFrame extends JFrame {
         JLabel welcomeLabel = new JLabel(
                 "Welcome Back"
         );
-
         welcomeLabel.setFont(
                 new Font("Segoe UI", Font.BOLD, 24)
         );
-
         welcomeLabel.setForeground(TEXT);
-
         welcomeLabel.setAlignmentX(
                 Component.CENTER_ALIGNMENT
         );
-
-
         JLabel instructionLabel = new JLabel(
                 "Please enter your staff credentials"
         );
-
         instructionLabel.setFont(
                 new Font("Segoe UI", Font.PLAIN, 13)
         );
-
         instructionLabel.setForeground(
                 SECONDARY_TEXT
         );
-
         instructionLabel.setAlignmentX(
                 Component.CENTER_ALIGNMENT
         );
-
-
         card.add(welcomeLabel);
-
         card.add(
                 Box.createVerticalStrut(5)
         );
-
         card.add(instructionLabel);
-
         card.add(
                 Box.createVerticalStrut(28)
         );
-
 
         // =====================================================
         // USERNAME LABEL
@@ -257,40 +193,30 @@ public class LoginFrame extends JFrame {
         JLabel usernameLabel = new JLabel(
                 "Username"
         );
-
         usernameLabel.setFont(
                 new Font("Segoe UI", Font.BOLD, 14)
         );
-
         usernameLabel.setForeground(TEXT);
-
         usernameLabel.setAlignmentX(
                 Component.CENTER_ALIGNMENT
         );
 
-
         // Username field
         usernameField = new JTextField();
-
         usernameField.setFont(
                 new Font("Segoe UI", Font.PLAIN, 15)
         );
-
         usernameField.setPreferredSize(
                 new Dimension(320, 42)
         );
-
         usernameField.setMaximumSize(
                 new Dimension(320, 42)
         );
-
         usernameField.setAlignmentX(
                 Component.CENTER_ALIGNMENT
         );
-
         usernameField.setBorder(
                 BorderFactory.createCompoundBorder(
-
                         BorderFactory.createLineBorder(
                                 BORDER,
                                 1
@@ -304,16 +230,12 @@ public class LoginFrame extends JFrame {
                         )
                 )
         );
-
-
         card.add(usernameLabel);
-
         card.add(
                 Box.createVerticalStrut(7)
         );
 
         card.add(usernameField);
-
 
         // =====================================================
         // PASSWORD LABEL
@@ -322,7 +244,6 @@ public class LoginFrame extends JFrame {
         card.add(
                 Box.createVerticalStrut(18)
         );
-
 
         JLabel passwordLabel = new JLabel(
                 "Password"
@@ -337,7 +258,6 @@ public class LoginFrame extends JFrame {
         passwordLabel.setAlignmentX(
                 Component.CENTER_ALIGNMENT
         );
-
 
         // Password field
         passwordField = new JPasswordField();
@@ -360,7 +280,6 @@ public class LoginFrame extends JFrame {
 
         passwordField.setBorder(
                 BorderFactory.createCompoundBorder(
-
                         BorderFactory.createLineBorder(
                                 BORDER,
                                 1
@@ -375,15 +294,11 @@ public class LoginFrame extends JFrame {
                 )
         );
 
-
         card.add(passwordLabel);
-
         card.add(
                 Box.createVerticalStrut(7)
         );
-
         card.add(passwordField);
-
 
         // =====================================================
         // BUTTONS
@@ -392,7 +307,6 @@ public class LoginFrame extends JFrame {
         card.add(
                 Box.createVerticalStrut(25)
         );
-
 
         JPanel buttonPanel = new JPanel(
                 new FlowLayout(
@@ -403,11 +317,9 @@ public class LoginFrame extends JFrame {
         );
 
         buttonPanel.setBackground(CARD);
-
         buttonPanel.setAlignmentX(
                 Component.CENTER_ALIGNMENT
         );
-
 
         // LOGIN BUTTON
         JButton loginButton = new JButton(
@@ -419,23 +331,18 @@ public class LoginFrame extends JFrame {
         );
 
         loginButton.setForeground(Color.WHITE);
-
         loginButton.setBackground(
                 PRIMARY_BLUE
         );
 
         loginButton.setFocusPainted(false);
-
         loginButton.setBorderPainted(false);
-
         loginButton.setPreferredSize(
                 new Dimension(125, 42)
         );
-
         loginButton.setCursor(
                 new Cursor(Cursor.HAND_CURSOR)
         );
-
 
         // CLEAR BUTTON
         JButton clearButton = new JButton(
@@ -447,15 +354,12 @@ public class LoginFrame extends JFrame {
         );
 
         clearButton.setForeground(TEXT);
-
         clearButton.setBackground(
                 new Color(235, 239, 244)
         );
 
         clearButton.setFocusPainted(false);
-
         clearButton.setBorderPainted(false);
-
         clearButton.setPreferredSize(
                 new Dimension(125, 42)
         );
@@ -463,15 +367,9 @@ public class LoginFrame extends JFrame {
         clearButton.setCursor(
                 new Cursor(Cursor.HAND_CURSOR)
         );
-
-
         buttonPanel.add(loginButton);
-
         buttonPanel.add(clearButton);
-
-
         card.add(buttonPanel);
-
 
         // =====================================================
         // FOOTER TEXT
@@ -480,7 +378,6 @@ public class LoginFrame extends JFrame {
         card.add(
                 Box.createVerticalStrut(22)
         );
-
 
         JLabel footerLabel = new JLabel(
                 "Authorized hospital staff only"
@@ -497,10 +394,7 @@ public class LoginFrame extends JFrame {
         footerLabel.setAlignmentX(
                 Component.CENTER_ALIGNMENT
         );
-
-
         card.add(footerLabel);
-
 
         // =====================================================
         // BUTTON ACTIONS
@@ -514,12 +408,10 @@ public class LoginFrame extends JFrame {
                 e -> clearFields()
         );
 
-
         // Press Enter inside password field
         passwordField.addActionListener(
                 e -> login()
         );
-
 
         // =====================================================
         // CARD CONTAINER
@@ -547,7 +439,6 @@ public class LoginFrame extends JFrame {
                 BorderLayout.CENTER
         );
 
-
         // =====================================================
         // ADD EVERYTHING
         // =====================================================
@@ -561,11 +452,8 @@ public class LoginFrame extends JFrame {
                 cardContainer,
                 BorderLayout.CENTER
         );
-
-
         add(mainPanel);
     }
-
 
     // =========================================================
     // LOGIN
@@ -581,25 +469,18 @@ public class LoginFrame extends JFrame {
                         passwordField.getPassword()
                 ).trim();
 
-
         // Check empty fields
         if (username.isEmpty() ||
                 password.isEmpty()) {
 
             JOptionPane.showMessageDialog(
-
                     this,
-
                     "Please enter both username and password.",
-
                     "Login Error",
-
                     JOptionPane.WARNING_MESSAGE
             );
-
             return;
         }
-
 
         // Authenticate user
         User user =
@@ -608,49 +489,32 @@ public class LoginFrame extends JFrame {
                         password
                 );
 
-
         // Successful login
         if (user != null) {
 
             JOptionPane.showMessageDialog(
-
                     this,
-
                     "Login successful!\nWelcome, "
                             + user.getUsername()
                             + ".",
-
                     "Login Successful",
-
                     JOptionPane.INFORMATION_MESSAGE
             );
-
-
             openDashboard(user);
-
         }
 
         // Failed login
         else {
-
             JOptionPane.showMessageDialog(
-
                     this,
-
                     "Invalid username or password.",
-
                     "Login Failed",
-
                     JOptionPane.ERROR_MESSAGE
             );
-
-
             passwordField.setText("");
-
             passwordField.requestFocus();
         }
     }
-
 
     // =========================================================
     // ROLE BASED DASHBOARD
@@ -661,36 +525,23 @@ public class LoginFrame extends JFrame {
         String role =
                 user.getRole().toUpperCase();
 
-
         switch (role) {
-
             case "RECEPTION":
-
                 new ReceptionFrame()
                         .setVisible(true);
-
                 dispose();
-
                 break;
-
 
             case "DOCTOR":
-
                 new DoctorDashboardFrame(user).setVisible(true);
                 dispose();
-
                 break;
-
 
             case "PHARMACY":
-
                 new PharmacyDashboardFrame()
                         .setVisible(true);
-
                 dispose();
-
                 break;
-
 
             case "AMBULANCE":
                 new AmbulanceDashboardFrame()
@@ -698,56 +549,41 @@ public class LoginFrame extends JFrame {
                 dispose();
                 break;
 
-
             case "CASUALTY":
                 new CasualtyDashboardFrame()
                         .setVisible(true);
                 dispose();
                 break;
 
-
             default:
-
                 JOptionPane.showMessageDialog(
-
                         this,
-
                         "Unknown user role: "
                                 + user.getRole(),
-
                         "Access Error",
-
                         JOptionPane.ERROR_MESSAGE
                 );
         }
     }
-
 
     // =========================================================
     // CLEAR FIELDS
     // =========================================================
 
     private void clearFields() {
-
         usernameField.setText("");
-
         passwordField.setText("");
-
         usernameField.requestFocus();
     }
-
 
     // =========================================================
     // MAIN METHOD
     // =========================================================
 
     public static void main(String[] args) {
-
         SwingUtilities.invokeLater(() -> {
-
             LoginFrame frame =
                     new LoginFrame();
-
             frame.setVisible(true);
         });
     }
